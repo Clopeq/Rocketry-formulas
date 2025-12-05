@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module rocketry</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">rocketry</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:c%3A%5Cpwr%20in%20space%5Cprogramming%5Cpython%5Cstatic%20fire%20analysis%5Cnova%20-%20251123%5Crocketry%5Crocketry.py">c:\pwr in space\programming\python\static fire analysis\nova - 251123\rocketry\rocketry.py</a></td></tr></table>
+    <p><span class="code">#&nbsp;3rd&nbsp;December&nbsp;2025</span></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="scipy.constants.html">scipy.constants</a><br>
+</td><td class="multicolumn"><a href="numpy.html">numpy</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-calculate_Cf"><strong>calculate_Cf</strong></a>(thrust: float, area_throat: float, pressure_chamber: float)</dt><dd><span class="code">Calculate&nbsp;thrust&nbsp;coefficient&nbsp;using&nbsp;it's&nbsp;definition<br>
+&nbsp;<br>
+:param&nbsp;thrust:&nbsp;[N]&nbsp;Rocket&nbsp;thrust<br>
+:type&nbsp;thrust:&nbsp;float<br>
+:param&nbsp;area_throat:&nbsp;[m2]&nbsp;Nozzle&nbsp;critical&nbsp;area<br>
+:type&nbsp;area_throat:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Chamber&nbsp;pressure</span></dd></dl>
+ <dl><dt><a name="-calculate_Cf_fixed_nozzle"><strong>calculate_Cf_fixed_nozzle</strong></a>(k: float, area_exit: float, area_throat: float, pressure_chamber: float, pressure_exit: float = 101325, pressure_ambient: float = 101325)</dt><dd><span class="code">Calculate&nbsp;ideal&nbsp;(theoretical)&nbsp;thrust&nbsp;coefficient&nbsp;for&nbsp;fixed&nbsp;expantion&nbsp;ratio&nbsp;nozzle.<br>
+&nbsp;<br>
+note:&nbsp;the&nbsp;nozzle&nbsp;does&nbsp;not&nbsp;have&nbsp;to&nbsp;be&nbsp;optimally&nbsp;expanded<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;area_exit:&nbsp;[m2]&nbsp;Nozzle&nbsp;exit&nbsp;cross&nbsp;section&nbsp;area<br>
+:type&nbsp;area_exit:&nbsp;float<br>
+:param&nbsp;area_throat:&nbsp;[m2]&nbsp;Nozzle&nbsp;throat&nbsp;cross&nbsp;section&nbsp;area<br>
+:type&nbsp;area_throat:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float<br>
+:param&nbsp;pressure_exit:&nbsp;[Pa]&nbsp;Exit&nbsp;pressure<br>
+:type&nbsp;pressure_exit:&nbsp;float<br>
+:param&nbsp;pressure_ambient:&nbsp;[Pa]&nbsp;Ambient&nbsp;pressure<br>
+:type&nbsp;pressure_ambient:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_Cf_ideal"><strong>calculate_Cf_ideal</strong></a>(k: float, pressure_chamber: float, pressure_exit: float = 101325)</dt><dd><span class="code">Calculate&nbsp;ideal&nbsp;(theoretical)&nbsp;thrust&nbsp;coefficient&nbsp;for&nbsp;optimally&nbsp;expanded&nbsp;nozzle<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Chamber&nbsp;pressure&nbsp;(total&nbsp;pressure)<br>
+:type&nbsp;pressure_chamber:&nbsp;float<br>
+:param&nbsp;pressure_exit:&nbsp;[Pa]&nbsp;Nozzle&nbsp;exit&nbsp;pressure&nbsp;(ambient)<br>
+:type&nbsp;pressure_exit:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_cstar"><strong>calculate_cstar</strong></a>(area_throat: float, pressure_chamber: float, flow_rate: float)</dt><dd><span class="code">Calculate&nbsp;characteristic&nbsp;velocity&nbsp;using&nbsp;it's&nbsp;definition<br>
+&nbsp;<br>
+:param&nbsp;area_throat:&nbsp;[m2]&nbsp;Nozzle&nbsp;critical&nbsp;area<br>
+:type&nbsp;area_throat:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float<br>
+:param&nbsp;flow_rate:&nbsp;[kg/s]&nbsp;Total&nbsp;propellant&nbsp;flow&nbsp;rate<br>
+:type&nbsp;flow_rate:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_cstar_ideal"><strong>calculate_cstar_ideal</strong></a>(k: float, Rs: float, temperature_combustion: float)</dt><dd><span class="code">Calculate&nbsp;ideal&nbsp;(theoretical)&nbsp;characteristic&nbsp;velocity<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;Rs:&nbsp;[J/kg-K]&nbsp;Specific&nbsp;gas&nbsp;constant<br>
+:type&nbsp;Rs:&nbsp;float<br>
+:param&nbsp;temperature_combustion:&nbsp;[K]&nbsp;Combustion&nbsp;temperature&nbsp;(total&nbsp;temperature)<br>
+:type&nbsp;temperature_combustion:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_density_exit"><strong>calculate_density_exit</strong></a>(k: float, density_chamber: float, expansion_ratio: float)</dt><dd><span class="code">Calculate&nbsp;exhaust&nbsp;gas&nbsp;density&nbsp;at&nbsp;the&nbsp;nozzle&nbsp;exit<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;density_chamber:&nbsp;[kg/m3]&nbsp;Exhaust&nbsp;gas&nbsp;density&nbsp;inside&nbsp;combustion&nbsp;chamber&nbsp;(total&nbsp;density)<br>
+:type&nbsp;density_chamber:&nbsp;float<br>
+:param&nbsp;expansion_ratio:&nbsp;[-]&nbsp;Nozzle&nbsp;area&nbsp;ratio<br>
+:type&nbsp;expansion_ratio:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_density_throat"><strong>calculate_density_throat</strong></a>(k: float, density_chamber: float)</dt><dd><span class="code">Calculate&nbsp;exhaust&nbsp;gas&nbsp;density&nbsp;at&nbsp;the&nbsp;nozzle&nbsp;throat<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;density_chamber:&nbsp;kg/m3]&nbsp;Exhaust&nbsp;gas&nbsp;density&nbsp;inside&nbsp;combustion&nbsp;chamber&nbsp;(total&nbsp;density)<br>
+:type&nbsp;density_chamber:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_expansion_ratio_mach"><strong>calculate_expansion_ratio_mach</strong></a>(k: float, Mach_number: float)</dt><dd><span class="code">Calculate&nbsp;nozzle&nbsp;area&nbsp;ratio&nbsp;for&nbsp;given&nbsp;exhaust&nbsp;machn&nbsp;number<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;Isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;Mach_number:&nbsp;Exhaust&nbsp;mach&nbsp;number<br>
+:type&nbsp;Mach_number:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_expansion_ratio_pressure"><strong>calculate_expansion_ratio_pressure</strong></a>(k: float, pressure_chamber: float, pressure_exit: float = 101325)</dt><dd><span class="code">Calculate&nbsp;nozzle&nbsp;area&nbsp;ratio&nbsp;for&nbsp;given&nbsp;pressure&nbsp;ratio<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;Isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;pressure_total:&nbsp;[Pa]&nbsp;Total&nbsp;(chamber)&nbsp;pressure<br>
+:type&nbsp;pressure_total:&nbsp;float<br>
+:param&nbsp;pressure_exit:&nbsp;[Pa]&nbsp;Exit&nbsp;pressure<br>
+:type&nbsp;pressure_exit:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_flow_rate"><strong>calculate_flow_rate</strong></a>(k: float, Rs: float, area_throat: float, temperature_combustion: float, pressure_chamber: float)</dt><dd><span class="code">Calculate&nbsp;propellant&nbsp;mass&nbsp;flow&nbsp;throught&nbsp;the&nbsp;nozzle<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;Rs:&nbsp;[J/kg-K]&nbsp;Specific&nbsp;gas&nbsp;constant<br>
+:type&nbsp;Rs:&nbsp;float<br>
+:param&nbsp;area_throat:&nbsp;[m2]&nbsp;Nozzle&nbsp;throat&nbsp;area<br>
+:type&nbsp;area_throat:&nbsp;float<br>
+:param&nbsp;temperature_combustion:&nbsp;[K]&nbsp;Combustion&nbsp;temperature<br>
+:type&nbsp;temperature_combustion:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[K]&nbsp;Combustion&nbsp;chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_impulse"><strong>calculate_impulse</strong></a>(thrust: list, time: list)</dt><dd><span class="code">Calculate&nbsp;the&nbsp;total&nbsp;impulse&nbsp;from&nbsp;thrust&nbsp;curve.<br>
+&nbsp;<br>
+thrust&nbsp;and&nbsp;time&nbsp;have&nbsp;to&nbsp;be&nbsp;of&nbsp;the&nbsp;same&nbsp;length<br>
+&nbsp;<br>
+:param&nbsp;thrust:&nbsp;[N]&nbsp;Thrust&nbsp;values<br>
+:type&nbsp;thrust:&nbsp;list<br>
+:param&nbsp;time:&nbsp;[s]&nbsp;Time&nbsp;stamp&nbsp;values<br>
+:type&nbsp;time:&nbsp;list</span></dd></dl>
+ <dl><dt><a name="-calculate_isp"><strong>calculate_isp</strong></a>(thrust: float, flow_rate: float)</dt><dd><span class="code">Calculate&nbsp;specific&nbsp;impulse&nbsp;from&nbsp;it's&nbsp;definition<br>
+&nbsp;<br>
+:param&nbsp;thrust:&nbsp;[N]&nbsp;Motor's&nbsp;thrust<br>
+:type&nbsp;thrust:&nbsp;float<br>
+:param&nbsp;flow_rate:&nbsp;[kg/s]&nbsp;Total&nbsp;proprellant&nbsp;flow&nbsp;rate<br>
+:type&nbsp;flow_rate:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_isp_cstar_Cf"><strong>calculate_isp_cstar_Cf</strong></a>(cstar: float, Cf: float)</dt><dd><span class="code">Calculate&nbsp;specific&nbsp;impulse&nbsp;from&nbsp;characteristic&nbsp;velocity&nbsp;and&nbsp;thrust&nbsp;coefficient<br>
+&nbsp;<br>
+:param&nbsp;cstar:&nbsp;[m/s]&nbsp;Characteristic&nbsp;velocity<br>
+:type&nbsp;cstar:&nbsp;float<br>
+:param&nbsp;Cf:&nbsp;[-]&nbsp;Thrust&nbsp;coefficient<br>
+:type&nbsp;Cf:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_isp_ideal"><strong>calculate_isp_ideal</strong></a>(k: float, Rs: float, temperature_combustion: float, pressure_chamber: float, pressure_exit: float = 101325)</dt><dd><span class="code">Calculate&nbsp;ideal&nbsp;(theoretical)&nbsp;specific&nbsp;impuls&nbsp;for&nbsp;optimally&nbsp;expanded&nbsp;nozzle.<br>
+&nbsp;<br>
+for&nbsp;vacuum&nbsp;performance&nbsp;pass&nbsp;0&nbsp;as&nbsp;exit&nbsp;pressure<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;Rs:&nbsp;[J/kg-K]&nbsp;Specific&nbsp;gas&nbsp;constant<br>
+:type&nbsp;Rs:&nbsp;float<br>
+:param&nbsp;temperature_combustion:&nbsp;[K]&nbsp;Combustion&nbsp;temperature<br>
+:type&nbsp;temperature_combustion:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Combusiton&nbsp;chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float<br>
+:param&nbsp;pressure_exit:&nbsp;[Pa]&nbsp;Nozzle&nbsp;exit&nbsp;pressure<br>
+:type&nbsp;pressure_exit:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_isp_impulse"><strong>calculate_isp_impulse</strong></a>(total_impulse: float, mass_consumed: float)</dt><dd><span class="code">Calculate&nbsp;specific&nbsp;impulse&nbsp;from&nbsp;total&nbsp;delivered&nbsp;impulse&nbsp;and&nbsp;propellnt&nbsp;burned<br>
+&nbsp;<br>
+:param&nbsp;total_impulse:&nbsp;[Ns]&nbsp;Total&nbsp;impulse<br>
+:type&nbsp;total_impulse:&nbsp;float<br>
+:param&nbsp;mass_consumed:&nbsp;[kg]&nbsp;Propellant&nbsp;consumed<br>
+:type&nbsp;mass_consumed:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_isp_veq"><strong>calculate_isp_veq</strong></a>(velocity_effective: float)</dt><dd><span class="code">Calculate&nbsp;specific&nbsp;impulse&nbsp;from&nbsp;effective&nbsp;exhaust&nbsp;velocity<br>
+&nbsp;<br>
+:param&nbsp;velocity_effective:&nbsp;[m/s]&nbsp;Effective&nbsp;exhaust&nbsp;velocity<br>
+:type&nbsp;velocity_effective:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_pressure_exit"><strong>calculate_pressure_exit</strong></a>(k: float, pressure_chamber: float, expansion_ratio: float)</dt><dd><span class="code">Calculate&nbsp;static&nbsp;exit&nbsp;pressure<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Combusiton&nbsp;chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float<br>
+:param&nbsp;expansion_ratio:&nbsp;[-]&nbsp;Nozzle&nbsp;area&nbsp;ratio<br>
+:type&nbsp;expansion_ratio:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_pressure_throat"><strong>calculate_pressure_throat</strong></a>(k: float, pressure_chamber: float)</dt><dd><span class="code">Calculate&nbsp;pressure&nbsp;at&nbsp;nozzle&nbsp;throat<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Combustion&nbsp;chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_temperature_exit"><strong>calculate_temperature_exit</strong></a>(k: float, temperature_combustion: float, expansion_ratio: float)</dt><dd><span class="code">Calculate&nbsp;exhaust&nbsp;gas&nbsp;temperature&nbsp;at&nbsp;the&nbsp;nozzle&nbsp;exit<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;temperature_combustion:&nbsp;[K]&nbsp;Comsustion&nbsp;temperature<br>
+:type&nbsp;temperature_combustion:&nbsp;float<br>
+:param&nbsp;expansion_ratio:&nbsp;[-]&nbsp;Nozzle&nbsp;area&nbsp;ratio<br>
+:type&nbsp;expansion_ratio:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_tempreature_throat"><strong>calculate_tempreature_throat</strong></a>(k: float, temperature_combustion: float)</dt><dd><span class="code">Calculate&nbsp;exhaust&nbsp;gas&nbsp;temperature&nbsp;at&nbsp;the&nbsp;nozzle&nbsp;throat<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;temperature_combustion:&nbsp;[K]&nbsp;Comsustion&nbsp;temperature<br>
+:type&nbsp;temperature_combustion:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_thrust_ideal"><strong>calculate_thrust_ideal</strong></a>(k: float, area_throat: float, area_exit: float, pressure_chamber: float, pressure_exit: float = 101325, pressure_ambient: float = 101325)</dt><dd><span class="code">Calculate&nbsp;rocket&nbsp;motor&nbsp;thrust<br>
+&nbsp;<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;area_throat:&nbsp;[m2]&nbsp;Nozzle&nbsp;throat&nbsp;area<br>
+:type&nbsp;area_throat:&nbsp;float<br>
+:param&nbsp;area_exit:&nbsp;[m2]&nbsp;Nozzle&nbsp;exit&nbsp;area<br>
+:type&nbsp;area_exit:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Combustion&nbsp;chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float<br>
+:param&nbsp;pressure_exit:&nbsp;[Pa]&nbsp;Nozzle&nbsp;exit&nbsp;pressure<br>
+:type&nbsp;pressure_exit:&nbsp;float<br>
+:param&nbsp;pressure_ambient:&nbsp;[Pa]&nbsp;Ambient&nbsp;pressure<br>
+:type&nbsp;pressure_ambient:&nbsp;float</span></dd></dl>
+ <dl><dt><a name="-calculate_velocity_exhaust"><strong>calculate_velocity_exhaust</strong></a>(k: float, Rs: float, temperature_combustion: float, pressure_chamber: float, pressure_exit: float = 101325)</dt><dd><span class="code">Calculate&nbsp;exhaust&nbsp;gas&nbsp;velocity<br>
+&nbsp;<br>
+:param&nbsp;k:&nbsp;[-]&nbsp;isentropic&nbsp;exponent<br>
+:type&nbsp;k:&nbsp;float<br>
+:param&nbsp;Rs:&nbsp;[J/kg-K]&nbsp;Specific&nbsp;gas&nbsp;constant<br>
+:type&nbsp;Rs:&nbsp;float<br>
+:param&nbsp;temperature_combustion:&nbsp;[K]&nbsp;Combustion&nbsp;temperature<br>
+:type&nbsp;temperature_combustion:&nbsp;float<br>
+:param&nbsp;pressure_chamber:&nbsp;[Pa]&nbsp;Combustion&nbsp;chamber&nbsp;pressure<br>
+:type&nbsp;pressure_chamber:&nbsp;float<br>
+:param&nbsp;pressure_exit:&nbsp;Pa]&nbsp;Nozzle&nbsp;exit&nbsp;pressure<br>
+:type&nbsp;pressure_exit:&nbsp;float</span></dd></dl>
+</td></tr></table>
+</body></html>
