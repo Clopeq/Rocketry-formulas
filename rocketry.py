@@ -155,7 +155,7 @@ def calculate_isp(thrust: float, flow_rate: float):
    isp = thrust/const.g/flow_rate
    return isp
 
-def calculate_isp_veq(velocity_effective: float):
+def calculate_isp_vaq(velocity_effective: float):
    """
    Calculate specific impulse from effective exhaust velocity
    
@@ -341,7 +341,7 @@ def calculate_thrust_ideal(k: float, area_throat: float, area_exit: float, press
 
    gamma1 = 2*k**2/(k-1) * (2/(k+1))**((k+1)/(k-1))
    gamma2 = (k-1)/k
-   pressure_ratio = pressure_exit/pressure_ambient
+   pressure_ratio = pressure_exit/pressure_chamber
    thrust = area_throat * pressure_chamber * np.sqrt(gamma1 * (1-pressure_ratio**gamma2)) + area_exit*(pressure_exit-pressure_ambient)
    return thrust
 
@@ -361,7 +361,7 @@ def calculate_velocity_exhaust(k: float, Rs: float, temperature_combustion: floa
    :type pressure_exit: float
    """
 
-   gamma1 = 2*k/(k+1)
+   gamma1 = 2*k/(k-1)
    gamma2 = (k+1)/k
    velocity_exhaust = np.sqrt(Rs*temperature_combustion*gamma1*(1-(pressure_exit/pressure_chamber)**gamma2))
    return velocity_exhaust
